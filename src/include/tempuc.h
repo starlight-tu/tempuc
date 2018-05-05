@@ -2,7 +2,7 @@
 #ifndef TEMPUC_H
 #define TEMPUC_H
 
-class Temp
+class Tempuc
 {
 private:
 	float convert(Temp t);
@@ -20,7 +20,7 @@ public:
 	float val;
 	bool isInc; //true = Increment Convertion; false = Scale Conversion
 
-	Temp(float v = 0, TempType t = TEMP_C, bool inc = false);
+	Tempuc(float v = 0, TempType t = TEMP_C, bool inc = false);
 
 	float toC();
 	float toK();
