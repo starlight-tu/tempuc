@@ -1,6 +1,6 @@
 //Ref: cplusplus.com/forum/articles/10627
-#ifndef TEMP_H
-#define TEMP_H
+#ifndef TEMPUC_H
+#define TEMPUC_H
 
 class Temp
 {
