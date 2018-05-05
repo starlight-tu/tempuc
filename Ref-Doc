@@ -1,0 +1,14 @@
+[Project]
+	Temperature Unit Converter
+	Tempuc
+
+References:
++ islandnet.com/~see/weather/whys/tempconv.htm
++ convert-me.com/en/convert/temperature-inc
++ thoughtco.com/formula-for-fahrenheit-and-celsius-conversions-2312229
++ khanacademy.org/math/algebra2/modeling-with-algebra/manipulating-formulas/v/solving-for-a-variable-2
++ thoughtco.com/temperature-conversion-formulas-609324
++ quora.com/What-is-a-good-explanation-for-the-odd-formula-to-convert-Fahrenheit-to-Celsius
+
+CUI -> Command User Interface
+GUI -> Graphic User Interface
