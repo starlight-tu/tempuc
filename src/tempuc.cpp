@@ -5,12 +5,12 @@
 
 
 //Constructors
-Temp::Temp(float v, TempType t, bool inc)
+Tempuc::Tempuc(float v, TempType t, bool inc)
 : val(v), type(t), isInc(inc) {}
 
 
 //Private Methods
-float Temp::getFreezingPointOfC(bool isC)
+float Tempuc::getFreezingPointOfC(bool isC)
 {//Freezing Point
 	if (isInc)
 		return 0;
@@ -18,7 +18,7 @@ float Temp::getFreezingPointOfC(bool isC)
 		return (isC == true) ? 32 : 273.15;
 }
 
-float Temp::convert(Temp t)
+float Tempuc::convert(Temp t)
 {
 	switch(type)
 	{
@@ -38,7 +38,7 @@ float Temp::convert(Temp t)
 
 
 // Public Methods
-float Temp::toC()
+float Tempuc::toC()
 {
 	switch (type)
 	{
@@ -57,7 +57,7 @@ float Temp::toC()
 	}
 }
 	
-float Temp::toK()
+float Tempuc::toK()
 {
 	switch (type)
 	{
@@ -76,7 +76,7 @@ float Temp::toK()
 	}
 }
 	
-float Temp::toF()
+float Tempuc::toF()
 {
 	switch (type)
 	{
@@ -97,7 +97,7 @@ float Temp::toF()
 
 
 // Operators
-bool Temp::operator <= (Temp t)
+bool Tempuc::operator <= (Temp t)
 {//Due to rounding error, we can only do approximate comparition!
 	if (type == t.type)
 		return val <= t.val;
@@ -105,7 +105,7 @@ bool Temp::operator <= (Temp t)
 		return fabs(val - convert(t)) <= 10e-5; //approximate comparition
 }
 
-bool Temp::operator >= (Temp t)
+bool Tempuc::operator >= (Temp t)
 {
 	if (type == t.type)
 		return val >= t.val;
@@ -113,7 +113,7 @@ bool Temp::operator >= (Temp t)
 		return fabs(val - convert(t)) >= 10e-5;
 }
 
-bool Temp::operator < (Temp t)
+bool Tempuc::operator < (Temp t)
 {
 	if (type == t.type)
 		return val < t.val;
@@ -121,7 +121,7 @@ bool Temp::operator < (Temp t)
 		return val < convert(t);
 }
 
-bool Temp::operator > (Temp t)
+bool Tempuc::operator > (Temp t)
 {
 	if (type == t.type)
 		return val > t.val;
