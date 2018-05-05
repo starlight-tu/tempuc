@@ -1,7 +1,5 @@
 // Temperature Unit Convertor
-// Contain class constructor and function
 // Credit to Mr.Le Quoc Huy for fixing rounding error!
-//g++ -c tuc.cpp
 #include <cmath>
 #include "temp.h"
 
@@ -21,7 +19,7 @@ float Temp::getFreezingPointOfC(bool isC)
 }
 
 float Temp::convert(Temp t)
-{//Allow to convert the same-class obj to THIS->type of obj
+{
 	switch(type)
 	{
 		case TEMP_C:
@@ -100,10 +98,10 @@ float Temp::toF()
 
 // Operators
 bool Temp::operator <= (Temp t)
-{//Due to approximate comparition, we can't make == operator!
+{//Due to rounding error, we can only do approximate comparition!
 	if (type == t.type)
 		return val <= t.val;
-	else //rounding error avoid by using |a-b| <= 10e-n (e > epsilon | n > natural number)
+	else //rounding error avoid by using |a-b| <= 10e-n (e = epsilon | n = natural number)
 		return fabs(val - convert(t)) <= 10e-5; //approximate comparition
 }
 
@@ -115,18 +113,18 @@ bool Temp::operator >= (Temp t)
 		return fabs(val - convert(t)) >= 10e-5;
 }
 
-bool Temp::operator > (Temp t)
-{
-	if (type == t.type)
-		return val > t.val;
-	else
-		return val > convert(t);
-}
-
 bool Temp::operator < (Temp t)
 {
 	if (type == t.type)
 		return val < t.val;
 	else
 		return val < convert(t);
+}
+
+bool Temp::operator > (Temp t)
+{
+	if (type == t.type)
+		return val > t.val;
+	else
+		return val > convert(t);
 }
